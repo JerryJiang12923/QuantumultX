@@ -22,20 +22,20 @@ if (typeof $response == "undefined") {
     if (forever) {
       data = {
         ...data,
-        "purchase_date": "2023-09-09T09:09:09Z"
+        "purchase_date": "2024-09-09T09:09:09Z"
       };
     } else {
       data = {
         ...data,
         "expires_date": "2099-09-09T09:09:09Z",
-        "purchase_date": "2023-09-09T09:09:09Z"
+        "purchase_date": "2024-09-09T09:09:09Z"
       };
     }
 
     pyer2.subscriber.entitlements[name] = data;
     pyer2.subscriber.subscriptions[appid] = {  
       ...data,
-      "original_purchase_date": "2023-09-09T09:09:09Z",
+      "original_purchase_date": "2024-09-09T09:09:09Z",
       "store": "app_store",
       "ownership_type": "PURCHASED",
       "period_type": "normal"
