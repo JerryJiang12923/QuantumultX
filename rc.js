@@ -14,7 +14,12 @@ if (typeof $response == "undefined") {
   pyer2.subscriber.entitlements = pyer2.subscriber.entitlements || {};
 
   for (let i = 0; i < names.length && i < appids.length; i++) {
-    const name = names[i];
+    const name = [
+        "Acids and salts list",
+        "Chemical Elements info",
+        "Long Periodic Table Layout",
+        "No ads"
+      ];
     const appid = appids[i];
 		let data = {
       "product_identifier": appid
