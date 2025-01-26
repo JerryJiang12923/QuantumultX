@@ -4,6 +4,7 @@
 #!author = @leepyer
 #!homepage = https://github.com/leey668
 #!icon = https://www.revenuecat.com/icons/icon-512x512.png
+#input = chrequest
 #!input = chname
 #!input = chappid
 #!select = forever,true,false
