@@ -11,10 +11,16 @@ try {
 }
 
 // 读取配置
-const uaPatterns = $persistentStore.read("chrequest")?.split(",").map(ua => ua.trim().toLowerCase()) || [];
-const names = $persistentStore.read("chname")?.split(",").map(name => name.trim()) || [];
-const appids = $persistentStore.read("chappid")?.split(",").map(id => id.trim()) || [];
-const forever = JSON.parse($persistentStore.read("forever") || "false");
+// 修复配置读取，过滤空值
+const uaPatterns = $persistentStore.read("chrequest")?.split(",").map(ua => ua.trim().toLowerCase()).filter(Boolean) || [];
+const names = $persistentStore.read("chname")?.split(",").map(name => name.trim()).filter(Boolean) || [];
+const appids = $persistentStore.read("chappid")?.split(",").map(id => id.trim()).filter(Boolean) || [];
+
+// 调整forever处理逻辑（根据需求）
+const baseData = {
+  purchase_date: "2024-09-09T09:09:09Z",
+  expires_date: forever ? "9999-12-31T23:59:59Z" : "2099-09-09T09:09:09Z"
+};
 
 // 对齐配置长度
 const minLength = Math.min(uaPatterns.length, names.length, appids.length);
