@@ -15,6 +15,7 @@ try {
 const uaPatterns = $persistentStore.read("chrequest")?.split(",").map(ua => ua.trim().toLowerCase()).filter(Boolean) || [];
 const names = $persistentStore.read("chname")?.split(",").map(name => name.trim()).filter(Boolean) || [];
 const appids = $persistentStore.read("chappid")?.split(",").map(id => id.trim()).filter(Boolean) || [];
+const forever = $persistentStore.read("forever")
 
 // 调整forever处理逻辑（根据需求）
 const baseData = {
